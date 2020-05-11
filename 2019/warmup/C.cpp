@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -25,22 +25,17 @@ int main(){
         name.erase(find(name.begin(), name.end(), '+'), name.end());
 
         pch = strtok(NULL,"@");
-        string provider (pch);   
- 
-        cout <<'['<< name<<"]["<<provider<<']' <<endl;
+        string provider (pch);
+
+        //optional
         providers[provider][name] = true;
-        
+
         delete str;
     }
-    
+
     unsigned short int counter = 0;
     for(pair<string, map<string, bool>> server : providers){
         counter += server.second.size();
-        //cout <<j.first<< "["<<j.second.size()<<"]"<<endl;
-       // for(pair<string, bool> person : server.second){
-            
-            //cout << '\t' << i.first << " :: "<<i.second<<endl;
-        //}
     }
     cout << counter << endl;
 
